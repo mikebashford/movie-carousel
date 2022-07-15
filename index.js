@@ -52,12 +52,14 @@ const View = (() => {
   const renderMovieList = (movies) => {
     let template = "";
     movies
-      .sort((a, b) => b.id - a.id)
+      .sort((a, b) => a.id - b.id)
       .forEach((movie) => {
         template += `
+            <li class="carousel-item">
               <img id="${movie.id}" src="${movie.imgUrl}"/>
-              <p id="${movie.id}">${movie.name}</p>
-              <p id="${movie.id}">${movie.outlineInfo}</p>
+              <p id="${movie.id}">Movie: ${movie.name}</p>
+              <p id="${movie.id}">Info: ${movie.outlineInfo}</p>
+            </li>
           `;
       });
     carouselEl.innerHTML = template;
@@ -89,3 +91,23 @@ const ViewModel = ((Model, View) => {
 })(Model, View);
 
 ViewModel.bootstrap();
+
+const leftButton = document.querySelector(".button--prev");
+const rightButton = document.querySelector(".button--next");
+const container = document.querySelector(".carousel-container");
+
+leftButton.addEventListener("click", () => {
+  container.scrollBy({
+    top: 0,
+    right: +100,
+    behavior: "smooth",
+  });
+});
+
+rightButton.addEventListener("click", () => {
+  container.scrollBy({
+    top: 0,
+    left: +100,
+    behavior: "smooth",
+  });
+});

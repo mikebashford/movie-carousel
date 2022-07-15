@@ -1,6 +1,6 @@
 .carousel-wrapper {
   overflow: hidden;
-  width: 90%;
+  width: 80%;
 }
 
 .carousel-wrapper * {
@@ -8,37 +8,20 @@
 }
 
 .carousel-container {
-  transform-style: preserve-3d;
-}
-
-.slide {
-  opacity: 0;
+  display: flex;
   position: absolute;
+  top: 25%;
+  background-color: green;
+  color: white;
+}
+
+.carousel-item {
+  list-style: none;
   top: 0;
+  height: 100%;
   width: 100%;
-  margin: auto;
-  padding: 1rem 4rem;
-  z-index: 100;
-  transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
-}
-
-.slide.active {
-  opacity: 1;
-  position: relative;
-  z-index: 900;
-}
-
-.slide.prev,
-.slide.next {
-  z-index: 800;
-}
-
-.slide.prev {
-  transform: translateX(-100%);
-}
-
-.slide.next {
-  transform: translateX(100%);
+  z-index: 1;
+  transition: transform 400ms;
 }
 
 .button--prev,
@@ -49,19 +32,17 @@
   height: 3rem;
   background-color: #fff;
   transform: translateY(-50%);
+  border-radius: 50%;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 2;
   border: 1px solid black;
 }
-
 .button--prev {
-  left: 0;
+  left: 20px;
 }
-
 .button--next {
-  right: 0;
+  right: 20px;
 }
-
 .button--prev::after,
 .button--next::after {
   content: " ";
@@ -74,7 +55,6 @@
   border-bottom: 2px solid black;
   transform: translate(-50%, -50%) rotate(135deg);
 }
-
 .button--next::after {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
