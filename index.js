@@ -99,7 +99,7 @@ const container = document.querySelector(".carousel-container");
 leftButton.addEventListener("click", () => {
   container.scrollBy({
     top: 0,
-    right: +100,
+    left: -100,
     behavior: "smooth",
   });
 });
@@ -107,7 +107,7 @@ leftButton.addEventListener("click", () => {
 rightButton.addEventListener("click", () => {
   container.scrollBy({
     top: 0,
-    left: +100,
+    left: 100,
     behavior: "smooth",
   });
 });

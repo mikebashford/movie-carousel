@@ -1,27 +1,20 @@
-.carousel-wrapper {
-  overflow: hidden;
-  width: 80%;
-}
-
-.carousel-wrapper * {
-  box-sizing: border-box;
-}
-
 .carousel-container {
   display: flex;
-  position: absolute;
-  top: 25%;
   background-color: green;
   color: white;
+  overflow: hidden;
+  margin-top: 150px;
 }
 
 .carousel-item {
   list-style: none;
-  top: 0;
-  height: 100%;
-  width: 100%;
   z-index: 1;
-  transition: transform 400ms;
+}
+
+.header {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .button--prev,
